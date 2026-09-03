@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&family=Cute+Font&family=Geist+Pixel&family=Pixelify+Sans:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: lightblue;
+        
+      }
+
+      .container {
+        text-align: center;
+        width: 1000px;
+        height: 800px;
+        background-color: beige;
+        border-radius: 15px;
+
+      }
+      .question {
+        font-family: "Comic Relief", system-ui;
+        font-size: 30px;
+        font-weight: 450px;
+        color: #680d35;
+       
+      }
+      div.imgContainer {
+        width: 400px;
+        height: 400px;
+        border: 1px solid #ccc;
+        margin: 20px auto;
+        background-image: url(assets/582794008076652648.jpg);
+        background-size: cover;
+        box-shadow: 1px 1px 10px gray;
+        transition: transform 0.3s ease;
+        border-radius: 10px;
+      }
+      button {
+        width: 170px;
+        height: 80px;
+        text-align: center;
+        font-family: "Comic Relief", system-ui;
+        font-weight: bolder;
+        font-style: normal;
+        font-size: 25px;
+        background-color: #fde7ef;
+        border: 0;
+        border-radius: 5px;
+        margin-top: 50px;
+        font-size: 40px;
+        color: #b9185e;
+        cursor: pointer;
+        box-shadow: 1px 1px 10px gray;
+        transition: transform 0.3s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="question">
+        <h1 id="question">Wanna play together?</h1>
+      </div>
+      <div class="imgContainer"></div>
+      <div class="button">
+        <button id="yesBtn" onclick="pilihYes()">Yes</button>
+        <button id="noBtn" onclick="pilihNo()">No</button>
+      </div>
+    </div>
+
+    <script>
+      const yesBtn = document.getElementById("yesBtn");
+      const noBtn = document.getElementById("noBtn");
+      const question = document.getElementById("question");
+      const imgContainer = document.querySelector(".imgContainer");
+      let noBtnClicked = 0;
+
+      function pilihYes() {
+        question.textContent = "Yay! Let's Log in!";
+        imgContainer.style.backgroundImage = "url(assets/hamster.jpg)";
+
+        yesBtn.disabled = true;
+        noBtn.disabled = true;
+      }
+      function pilihNo() {
+        noBtnClicked++;
+        if (noBtnClicked === 1) {
+          question.textContent = "Are you sure?";
+          yesBtn.style.transform = "scale(1.5)";
+          noBtn.style.transform = "translateX(-400px) translateY(-200px)";
+            imgContainer.style.backgroundImage = "url(assets/haha.jpg)";          
+        } else if (noBtnClicked === 2) {
+          question.textContent = "Please reconsider!";
+          yesBtn.style.transform = "scale(2)";
+          noBtn.style.transform = "translateX(500px) translateY(200px)";
+          imgContainer.style.backgroundImage = "url(assets/beg.jpg)";
+
+        } else if (noBtnClicked === 3) {
+          question.textContent = "Just one game?";
+          yesBtn.style.transform = "scale(2.5)";
+          noBtn.style.transform = "translateX(-200px) translateY(-700px)";
+          imgContainer.style.backgroundImage = "url(assets/beg2.jpg)";
+        } else if (noBtnClicked === 4) {
+          question.textContent = "Please say yes! I'm begging you!";
+          question.style.transform = "scale(0.9)";
+          yesBtn.style.transform = "scale(3)";
+          noBtn.style.transform = "translateX(400px) translateY(-500px)";
+          imgContainer.style.backgroundImage = "url(assets/cryingmeme.jpg)";
+        } else if (noBtnClicked >= 5) {
+          question.textContent = "Sorry bro, You have no CHOICE!";
+          noBtn.style.transform = "translateX(700px) translateY(-700px)";
+          imgContainer.style.backgroundImage = "url(assets/meme.jpg)";
+          yesBtn.style.transform = "scale(3.5)";
+          noBtn.disabled = true;
+        }
+      }
+    </script>
+  </body>
+</html>
