@@ -17,29 +17,26 @@
         align-items: center;
         height: 100vh;
         background-color: lightblue;
-        
       }
 
       .container {
         text-align: center;
-        width: 1000px;
-        height: 800px;
+        width: 300px;
+        height: 300px;
         background-color: beige;
         border-radius: 15px;
-
       }
       .question {
         font-family: "Comic Relief", system-ui;
-        font-size: 30px;
+        font-size: 10px;
         font-weight: 450px;
         color: #680d35;
-       
       }
       div.imgContainer {
-        width: 400px;
-        height: 400px;
+        width: 200px;
+        height: 200px;
         border: 1px solid #ccc;
-        margin: 20px auto;
+        margin: 25px auto;
         background-image: url(assets/582794008076652648.jpg);
         background-size: cover;
         box-shadow: 1px 1px 10px gray;
@@ -47,18 +44,16 @@
         border-radius: 10px;
       }
       button {
-        width: 170px;
-        height: 80px;
+        width: 70px;
+        height: 30px;
         text-align: center;
         font-family: "Comic Relief", system-ui;
         font-weight: bolder;
-        font-style: normal;
-        font-size: 25px;
         background-color: #fde7ef;
         border: 0;
         border-radius: 5px;
-        margin-top: 50px;
-        font-size: 40px;
+        margin-top: 20px;
+        font-size: 10px;
         color: #b9185e;
         cursor: pointer;
         box-shadow: 1px 1px 10px gray;
@@ -98,17 +93,16 @@
           question.textContent = "Are you sure?";
           yesBtn.style.transform = "scale(1.5)";
           noBtn.style.transform = "translateX(-400px) translateY(-200px)";
-            imgContainer.style.backgroundImage = "url(assets/haha.jpg)";          
+          imgContainer.style.backgroundImage = "url(assets/haha.jpg)";
         } else if (noBtnClicked === 2) {
           question.textContent = "Please reconsider!";
           yesBtn.style.transform = "scale(2)";
-          noBtn.style.transform = "translateX(500px) translateY(200px)";
+          noBtn.style.transform = "translateX(500px) translateY(170px)";
           imgContainer.style.backgroundImage = "url(assets/beg.jpg)";
-
         } else if (noBtnClicked === 3) {
           question.textContent = "Just one game?";
           yesBtn.style.transform = "scale(2.5)";
-          noBtn.style.transform = "translateX(-200px) translateY(-700px)";
+          noBtn.style.transform = "translateX(-200px) translateY(-400px)";
           imgContainer.style.backgroundImage = "url(assets/beg2.jpg)";
         } else if (noBtnClicked === 4) {
           question.textContent = "Please say yes! I'm begging you!";
@@ -118,7 +112,7 @@
           imgContainer.style.backgroundImage = "url(assets/cryingmeme.jpg)";
         } else if (noBtnClicked >= 5) {
           question.textContent = "Sorry bro, You have no CHOICE!";
-          noBtn.style.transform = "translateX(700px) translateY(-700px)";
+          noBtn.style.transform = "translateX(-700px) translateY(-400px)";
           imgContainer.style.backgroundImage = "url(assets/meme.jpg)";
           yesBtn.style.transform = "scale(3.5)";
           noBtn.disabled = true;
